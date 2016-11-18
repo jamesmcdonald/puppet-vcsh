@@ -28,14 +28,12 @@
 # --------
 #
 # @example
-#    class { 'vcsh':
-#      servers => [ 'pool.ntp.org', 'ntp.local.company.com' ],
-#    }
+#    include vcsh
 #
 # Authors
 # -------
 #
-# Author Name <author@domain.com>
+# James McDonald <james@jamesmcdonald.com>
 #
 # Copyright
 # ---------
@@ -43,6 +41,7 @@
 # Copyright 2016 Your name here, unless otherwise noted.
 #
 class vcsh {
-
-
+  package {['vcsh', 'git']:
+    ensure => latest,
+  }
 }
